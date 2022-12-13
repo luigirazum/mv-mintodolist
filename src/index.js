@@ -8,7 +8,7 @@ function component() {
   const element = document.createElement('div');
 
   // Lodash, use of .join() method
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  element.innerHTML = _.join(['Hello', 'webpack', 'with WebpackDevServer working OK ✔.'], ' ');
   element.classList.add('hello');
 
   return element;
