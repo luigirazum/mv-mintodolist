@@ -1,7 +1,7 @@
 {
-  "name": "mv-webpack-sbp",
+  "name": "Minimalist ToDo List",
   "version": "1.0.0",
-  "description": "A simple webpack boilerplate",
+  "description": "A simple HTML list of To Do tasks.",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luigirazum/mv-webpack-sbp.git"
+    "url": "git+https://github.com/luigirazum/mv-mintodolist.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Luis Zubia (GH @luigirazum) <soyzubia@gmail.com>",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/luigirazum/mv-webpack-sbp/issues"
+    "url": "https://github.com/luigirazum/mv-mintodolist/issues"
   },
-  "homepage": "https://github.com/luigirazum/mv-webpack-sbp#readme",
+  "homepage": "https://github.com/luigirazum/mv-mintodolist#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.2",
