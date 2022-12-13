@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/luigirazum/mv-webpack-sbp/issues"
   },
-  "homepage": "https://github.com/luigirazum/mv-webpack-sbp#readme"
+  "homepage": "https://github.com/luigirazum/mv-webpack-sbp#readme",
+  "devDependencies": {
+    "webpack-cli": "^5.0.1"
+  }
 }
