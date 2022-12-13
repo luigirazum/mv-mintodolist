@@ -10,7 +10,7 @@ function component() {
   // Lodash, use of .join() method
   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
   element.classList.add('hello');
-  
+
   return element;
 }
 
