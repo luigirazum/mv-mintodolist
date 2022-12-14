@@ -1,4 +1,103 @@
+/* Import Google Font for icons */
+@import 'material-symbols/outlined.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap');
+
+:root {
+  /* Font */
+  --fnt-family : 'Roboto', sans-serif;
+  --fnt-w-ligth: 300;
+  --fnt-w-regular: 400;
+  --fnt-w-bold: 500;
+  /* color pallete */
+  --almost-white: #fafafa;
+  --light-gray: #e8e8e8;
+  --smooth-gray: #c9c9c9;
+  --middle-gray: #b3b3b3;
+  --primary-color: #3f3f3f;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+body,
+ul {
+  background-color: var(--light-gray);
+}
+
 body {
-  background-color: bisque;
-  color: blue;
+  font-family: var(--fnt-family);
+  color: var(--primary-color);
+}
+
+body,
+h1 {
+  font-weight: var(--fnt-w-regular);
+  font-size: 1em;
+}
+
+ul {
+  width: 100%;
+  max-width: 30rem;
+  margin-inline: auto;
+  margin-block-start: 2em;
+  box-shadow: 0 3px 5px var(--smooth-gray);
+  display: flex;
+  flex-flow: column;
+  row-gap: 2px;
+}
+
+li {
+  background-color: var(--almost-white);
+  padding: 0.75em 0.7em;
+  display: flex;
+  align-items: center;
+}
+
+.title,
+.add {
+  justify-content: space-between;
+}
+
+.item {
+  padding-inline: 0.25em;
+}
+
+.task .icon {
+  margin-inline-start: auto;
+}
+
+.icon,
+.unchecked,
+.add .input {
+  color: var(--middle-gray);
+}
+
+.add .input {
+  font-style: italic;
+}
+
+.btn-sweep {
+  background-color: var(--light-gray);
+  justify-content: center;
+  column-gap: 0.2em;
+}
+
+/* Style for Google icons */
+.material-symbols-outlined {
+  font-size: 1.2em;
+  padding: 0.15em;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
