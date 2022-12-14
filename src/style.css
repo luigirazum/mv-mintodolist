@@ -6,10 +6,11 @@
 
 :root {
   /* Font */
-  --fnt-family : 'Roboto', sans-serif;
+  --fnt-family: 'Roboto', sans-serif;
   --fnt-w-ligth: 300;
   --fnt-w-regular: 400;
   --fnt-w-bold: 500;
+
   /* color pallete */
   --almost-white: #fafafa;
   --light-gray: #e8e8e8;
@@ -73,7 +74,7 @@ li {
 }
 
 .title {
-  cursor:default;
+  cursor: default;
 }
 
 .item {
@@ -81,24 +82,10 @@ li {
   padding-inline: 0.25em;
 }
 
-.task .icon {
-  cursor: pointer;
-  margin-inline-start: auto;
-}
-
 .icon,
 .unchecked,
 .add .input {
   color: var(--middle-gray);
-}
-
-.unchecked,
-.checked {
-  cursor: pointer;
-}
-
-.unchecked:hover {
-  color: var(--soft-gray);
 }
 
 .icon {
@@ -111,6 +98,20 @@ li {
 .icon:hover {
   color: var(--soft-gray);
   background-color: var(--light-gray);
+}
+
+.task .icon {
+  cursor: pointer;
+  margin-inline-start: auto;
+}
+
+.unchecked,
+.checked {
+  cursor: pointer;
+}
+
+.unchecked:hover {
+  color: var(--soft-gray);
 }
 
 .add .input {
@@ -143,4 +144,13 @@ li {
 /* Style for Google icons */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Icons in google */
+.com-tsk {
+  content: "task_alt";
+}
+
+.del-tsk {
+  content: "delete";
 }
