@@ -15,6 +15,7 @@
   --light-gray: #e8e8e8;
   --smooth-gray: #c9c9c9;
   --middle-gray: #b3b3b3;
+  --soft-gray: #7f7f7f;
   --primary-color: #3f3f3f;
 }
 
@@ -71,11 +72,17 @@ li {
   justify-content: space-between;
 }
 
+.title {
+  cursor:default;
+}
+
 .item {
+  cursor: text;
   padding-inline: 0.25em;
 }
 
 .task .icon {
+  cursor: pointer;
   margin-inline-start: auto;
 }
 
@@ -85,19 +92,55 @@ li {
   color: var(--middle-gray);
 }
 
+.unchecked,
+.checked {
+  cursor: pointer;
+}
+
+.unchecked:hover {
+  color: var(--soft-gray);
+}
+
+.icon {
+  font-size: 1.3em;
+  padding: 0.3em;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: var(--soft-gray);
+  background-color: var(--light-gray);
+}
+
 .add .input {
   font-style: italic;
 }
 
 .btn-sweep {
+  cursor: pointer;
   background-color: var(--light-gray);
   justify-content: center;
   column-gap: 0.2em;
 }
 
+.btn-sweep .icon {
+  cursor: inherit;
+  color: var(--primary-color);
+  background-color: transparent;
+}
+
+.btn-sweep:hover {
+  background-color: var(--smooth-gray);
+  color: var(--soft-gray);
+}
+
+.btn-sweep:hover .icon {
+  background-color: transparent;
+  color: var(--soft-gray);
+}
+
 /* Style for Google icons */
 .material-symbols-outlined {
-  font-size: 1.2em;
-  padding: 0.15em;
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
