@@ -4,8 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
+  cache: false,
   devServer: {
     static: './dist',
+    watchFiles: ['src/*.html'],
+    hot: true,
   },
   plugins: [
     new HtmlWebpackPlugin({

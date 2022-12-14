@@ -1,11 +1,12 @@
 {
-  "name": "Minimalist ToDo List",
+  "name": "mv-mintodolist",
   "version": "1.0.0",
   "description": "A simple HTML list of To Do tasks.",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open",
+    "restart": "webpack serve",
     "build": "webpack"
   },
   "repository": {
@@ -36,6 +37,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "material-symbols": "^0.4.2"
   }
 }
