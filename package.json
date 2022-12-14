@@ -1,5 +1,5 @@
 {
-  "name": "Minimalist ToDo List",
+  "name": "mv-mintodolist",
   "version": "1.0.0",
   "description": "A simple HTML list of To Do tasks.",
   "private": true,
