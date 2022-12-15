@@ -1,15 +1,16 @@
 // Lodash, now imported by this script
-import _ from 'lodash';
+import _, { add } from 'lodash';
+
+// Importing Task to create valid Task objects.
+// Importing TodoLs to create a collection of Task objects.
+import Task from './task.js';
+import TodoLs from './todols.js';
 
 // Import css styles for our project
 import './style.css';
 
 // -- (v) currentTasks - contains our collection of tasks -- //
-const currentTasks = [
-  { index: 0, completed: false, description: 'create the object task' },
-  { index: 1, completed: false, description: 'insert the list items dinamycally' },
-  { index: 2, completed: false, description: 'on page load, show the list' },
-];
+const todoList = new TodoLs();
 
 // -- (f) displayTask - creates the 'li' task html and inserts it into #tdlist -- //
 const displayTask = (task) => {
@@ -39,7 +40,24 @@ const displayTask = (task) => {
 
 // -- (e) When the DOM is ready, our tasks are generated from the currentTasks collection -- //
 window.addEventListener('DOMContentLoaded', () => {
-  _.forEach(currentTasks, (task) => {
-    displayTask(task);
-  });
+  if (todoList.hasTasks()) {
+    // If we have tasks in our todoList, we'll display them.
+    _.forEach(todoList.tasks, (task) => {
+      displayTask(task);
+    });
+  }
+});
+
+// -- (v) wrtTask - points to the "Add to your list..." new task -- //
+// const wrtTask = document.querySelector('.input');
+// - We listen for the 'Enter' key to add the new Task - //
+// - When adding a new Task you can cancel with 'Esc'  - //
+
+// const addTaskIcon = document.querySelector('.add .icon');
+
+const uiEvents = document.querySelector('#tdlist');
+
+uiEvents.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log(e, e.target, e.currentTarget, e.target.id);
 });

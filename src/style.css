@@ -116,6 +116,19 @@ li {
 
 .add .input {
   font-style: italic;
+  outline: none;
+}
+
+.input::before {
+  content: 'Add to your list...';
+}
+
+.input:focus-visible {
+  color: var(--primary-color);
+}
+
+.input:focus-visible::before {
+  content: '';
 }
 
 .btn-sweep {
