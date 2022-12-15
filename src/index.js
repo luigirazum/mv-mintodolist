@@ -63,6 +63,9 @@ const rematchIndexes = (startIndex) => {
       todoList.tasks[i].index = i;
       onScreenTasks[i].dataset.index = i;
     }
+
+    todoList.save();
+
     return true;
   }
   return false;
