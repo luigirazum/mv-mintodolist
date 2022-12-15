@@ -50,6 +50,10 @@ h1 {
   font-size: 1em;
 }
 
+h1 {
+  font-weight: var(--fnt-w-bold);
+}
+
 ul {
   width: 100%;
   max-width: 30rem;
@@ -152,6 +156,16 @@ li {
 .btn-sweep:hover .icon {
   background-color: transparent;
   color: var(--soft-gray);
+}
+
+.btn-delete {
+  background-color: var(--light-gray);
+  color: var(--primary-color);
+}
+
+.btn-delete:hover {
+  background-color: var(--smooth-gray);
+  color: var(--primary-color);
 }
 
 /* Style for Google icons */
