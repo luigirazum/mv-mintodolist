@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/index.js',
   cache: false,
   devServer: {
-    static: './doc',
+    static: './docs',
     watchFiles: ['src/*.html'],
     hot: true,
   },
