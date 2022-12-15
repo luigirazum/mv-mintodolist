@@ -8,16 +8,18 @@ class TodoLS {
 
   hasTasks = () => this.tasks.length > 0;
 
-  newTask = (task) => {
+  addTask = (task) => {
     task.index = this.tasks.length;
     this.tasks.push(task);
+    return _.last(this.tasks);
   }
 
   delTask = ({ index: i }) => {
     const previousSize = this.tasks.length;
-    this.tasks = _.filter(this.tasks, (task) => task.index === i);
 
-    return previousSize !== this.tasks.length;
+    this.tasks = this.tasks.filter(({ index }) => index !== parseInt(i, 10));
+
+    return (previousSize !== this.tasks.length) ? parseInt(i, 10) : null;
   }
 }
 
