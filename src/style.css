@@ -110,6 +110,11 @@ li {
   background-color: var(--light-gray);
 }
 
+.icon:active {
+  background-color: var(--middle-gray);
+  color: var(--light-gray);
+}
+
 .task .icon {
   cursor: pointer;
   margin-inline-start: auto;
