@@ -15,17 +15,26 @@ const todoList = new TodoLs();
 // -- (f) displayTask - creates the 'li' task html and inserts it into #tdlist -- //
 const displayTask = (task) => {
   const checkElement = document.createElement('span');
+  const itemElement = document.createElement('span');
+  const iconElement = document.createElement('span');
+
   checkElement.setAttribute('data-completed', task.completed);
-  checkElement.textContent = 'radio_button_unchecked';
+  itemElement.textContent = task.description;
+
   checkElement.classList.add('material-symbols-outlined');
-  checkElement.classList.add('unchecked');
   checkElement.classList.add('btn-radio');
 
-  const itemElement = document.createElement('span');
-  itemElement.textContent = task.description;
   itemElement.classList.add('item');
 
-  const iconElement = document.createElement('span');
+  if (task.isCompleted()) {
+    checkElement.textContent = 'task_alt';
+    checkElement.classList.add('checked');
+    itemElement.classList.add('completed');
+  } else {
+    checkElement.textContent = 'radio_button_unchecked';
+    checkElement.classList.add('unchecked');
+  }
+
   iconElement.textContent = 'more_vert';
   iconElement.classList.add('material-symbols-outlined');
   iconElement.classList.add('icon');
@@ -81,13 +90,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// -- (v) wrtTask - points to the "Add to your list..." new task -- //
-// const wrtTask = document.querySelector('.input');
-// - We listen for the 'Enter' key to add the new Task - //
-// - When adding a new Task you can cancel with 'Esc'  - //
-
-// const addTaskIcon = document.querySelector('.add .icon');
-
+// -- (v) uiEvents - to watch the events on the ul #tdlist -- //
 const uiEvents = document.querySelector('#tdlist');
 
 // -- uiEvents - handles the user interactions. -- //
@@ -136,6 +139,20 @@ uiEvents.addEventListener('click', (e) => {
     }
     if (tName.includes('btn-radio')) {
       // set the task as done
+      if (t.dataset.completed === 'true') {
+        t.classList.remove('checked');
+        t.textContent = 'radio_button_unchecked';
+        t.classList.add('unchecked');
+        t.dataset.completed = false;
+        t.nextElementSibling.classList.remove('completed');
+      } else {
+        t.classList.remove('unchecked');
+        t.textContent = 'task_alt';
+        t.classList.add('checked');
+        t.dataset.completed = true;
+        t.nextElementSibling.classList.add('completed');
+      }
+      todoList.comTask(e);
     }
     if (tName.includes('btn-delete')) {
       // when the delete button is clicked
