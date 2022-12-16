@@ -31,6 +31,11 @@ class TodoLS {
 
     return (previousSize !== this.tasks.length) ? parseInt(i, 10) : null;
   }
+
+  updTask = ({ parentElement: { dataset: { index: i } }, textContent: d }) => {
+    this.tasks[parseInt(i, 10)].description = d;
+    this.save();
+  }
 }
 
 export { TodoLS as default };
