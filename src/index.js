@@ -1,5 +1,5 @@
 // Lodash, now imported by this script
-import _, { add } from 'lodash';
+import _ from 'lodash';
 
 // Importing Task to create valid Task objects.
 // Importing TodoLs to create a collection of Task objects.
@@ -90,65 +90,84 @@ window.addEventListener('DOMContentLoaded', () => {
 
 const uiEvents = document.querySelector('#tdlist');
 
+// -- uiEvents - handles the user interactions. -- //
 uiEvents.addEventListener('click', (e) => {
-  const { target: t, currentTarget: ct } = e;
-  const { target: { dataset: { index: tIndex } } } = e;
+  const { target: t } = e;
   const { target: { id, previousElementSibling: pES } } = e;
-  const { target: { parentElement: { dataset: { index: peIndex } } } } = e;
   const { target: { parentElement: pE } } = e;
   const { target: { className: tName } } = e;
 
   e.preventDefault();
-  console.log('event', e);
-  console.log('target', t);
-  console.log('currentTarget', ct);
-  console.log('id', id);
-  console.log('previousElementSibling', pES);
 
   if (id) {
     switch (id) {
       case 'b-add':
         if (pES.textContent) {
-          console.log('Call to ADD NEW TASK.');
+          // when add new task button is clicked
+          // a new task is created/displayed
           const addedTask = addNewTask(pES);
           pES.textContent = '';
           displayTask(addedTask);
-          console.log(addedTask);
-          console.log(todoList);
         } else {
           pES.textContent = '';
           pES.removeAttribute('contenteditable');
         }
         break;
+      case 't-add':
+        t.firstElementChild.setAttribute('contenteditable', true);
+        t.firstElementChild.focus();
+        break;
       case 'i-new':
+        // when 'Add to your list' is clicked
+        // Edit the input to add a new task
         t.setAttribute('contenteditable', true);
         t.focus();
         break;
       default:
-        if (tIndex) {
-          console.log('Click on a list Task', t);
-        } else if (peIndex) {
-          console.log('Click somewhere in a Task', t, pE);
-        }
         break;
     }
   } else if (tName.includes('btn')) {
     if (tName.includes('btn-more')) {
-      console.log('btn-more en:', pE);
+      // when more button for the task is clicked
+      // show the delete button for the task
       t.textContent = 'delete';
-      t.classList.toggle('btn-more');
-      t.classList.toggle('btn-delete');
+      t.classList.remove('btn-more');
+      t.classList.add('btn-delete');
     }
     if (tName.includes('btn-radio')) {
-      console.log('btn-radio en:', pE);
+      // set the task as done
     }
     if (tName.includes('btn-delete')) {
-      console.log('delete the item', pE);
+      // when the delete button is clicked
+      // delete the task
       const { dataset } = pE;
       const delIndex = todoList.delTask(dataset);
       removeTask(pE);
-      console.log(rematchIndexes(delIndex));
-      console.log(todoList.tasks);
+      rematchIndexes(delIndex);
     }
+  } else if (tName.includes('task') && !tName.includes('editing')) {
+    t.classList.add('editing');
+    if (t.lastElementChild.classList.contains('btn-more')) {
+      t.lastElementChild.click();
+    }
+    t.children[1].setAttribute('contenteditable', true);
+    t.children[1].focus();
+    t.children[2].addEventListener('click', (ce) => {
+      ce.preventDefault();
+      const { target: ct } = ce;
+      if (ct) {
+        // when editing a task
+      }
+    });
+    t.children[1].addEventListener('blur', (ev) => {
+      ev.preventDefault();
+      const { target: bt, target: { parentElement: bpE, nextElementSibling: bnES } } = ev;
+      bpE.classList.remove('editing');
+      bnES.textContent = 'more_vert';
+      bnES.classList.remove('btn-delete');
+      bnES.classList.add('btn-more');
+      bt.removeAttribute('contenteditable');
+      todoList.updTask(bt);
+    });
   }
 });
