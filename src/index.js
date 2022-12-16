@@ -126,6 +126,20 @@ uiEvents.addEventListener('click', (e) => {
         t.setAttribute('contenteditable', true);
         t.focus();
         break;
+      case 'b-sweep':
+        if (todoList.hasCompletedTasks()) {
+          const deleteTasks = Array.from(document.querySelectorAll('.task .completed'));
+          deleteTasks.forEach((dt) => {
+            const delIndex = todoList.delTask(dt.parentElement.dataset);
+            removeTask(dt.parentElement);
+            rematchIndexes(delIndex);
+          });
+        }
+        break;
+      case 'b-sync':
+        // eslint-disable-next-line no-restricted-globals
+        location.reload();
+        break;
       default:
         break;
     }
