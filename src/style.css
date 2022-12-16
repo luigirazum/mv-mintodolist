@@ -14,6 +14,7 @@
   /* color pallete */
   --almost-white: #fafafa;
   --light-gray: #e8e8e8;
+  --enlight-gray: #d0d0d0;
   --smooth-gray: #c9c9c9;
   --middle-gray: #b3b3b3;
   --soft-gray: #7f7f7f;
@@ -50,6 +51,10 @@ h1 {
   font-size: 1em;
 }
 
+h1 {
+  font-weight: var(--fnt-w-bold);
+}
+
 ul {
   width: 100%;
   max-width: 30rem;
@@ -80,6 +85,7 @@ li {
 .item {
   cursor: text;
   padding-inline: 0.25em;
+  outline: none;
 }
 
 .icon,
@@ -116,6 +122,19 @@ li {
 
 .add .input {
   font-style: italic;
+  outline: none;
+}
+
+.input::before {
+  content: 'Add to your list...';
+}
+
+.input:focus-visible {
+  color: var(--primary-color);
+}
+
+.input:focus-visible::before {
+  content: '';
 }
 
 .btn-sweep {
@@ -141,6 +160,20 @@ li {
   color: var(--soft-gray);
 }
 
+.btn-delete {
+  background-color: var(--light-gray);
+  color: var(--primary-color);
+}
+
+.btn-delete:hover {
+  background-color: var(--smooth-gray);
+  color: var(--primary-color);
+}
+
+.editing {
+  background-color: var(--enlight-gray);
+}
+
 /* Style for Google icons */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -149,8 +182,4 @@ li {
 /* Icons in google */
 .com-tsk {
   content: "task_alt";
-}
-
-.del-tsk {
-  content: "delete";
 }
