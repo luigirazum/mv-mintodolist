@@ -36,6 +36,11 @@ class TodoLS {
     this.tasks[parseInt(i, 10)].description = d;
     this.save();
   }
+
+  comTask = ({ target: { parentElement: { dataset: { index: i } }, dataset: c } }) => {
+    this.tasks[parseInt(i, 10)].setCompleted(c);
+    this.save();
+  }
 }
 
 export { TodoLS as default };
