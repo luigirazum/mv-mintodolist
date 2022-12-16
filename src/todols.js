@@ -11,6 +11,8 @@ class TodoLS {
 
   hasTasks = () => this.tasks.length > 0;
 
+  hasCompletedTasks = () => this.tasks.some(({ completed: c }) => c);
+
   save = () => {
     localStorage.setItem('todoData', JSON.stringify(this.tasks));
   }
@@ -34,6 +36,11 @@ class TodoLS {
 
   updTask = ({ parentElement: { dataset: { index: i } }, textContent: d }) => {
     this.tasks[parseInt(i, 10)].description = d;
+    this.save();
+  }
+
+  comTask = ({ target: { parentElement: { dataset: { index: i } }, dataset: c } }) => {
+    this.tasks[parseInt(i, 10)].setCompleted(c);
     this.save();
   }
 }

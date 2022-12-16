@@ -88,6 +88,10 @@ li {
   outline: none;
 }
 
+.completed {
+  text-decoration: line-through;
+}
+
 .icon,
 .unchecked,
 .add .input {
@@ -104,6 +108,11 @@ li {
 .icon:hover {
   color: var(--soft-gray);
   background-color: var(--light-gray);
+}
+
+.icon:active {
+  background-color: var(--middle-gray);
+  color: var(--light-gray);
 }
 
 .task .icon {
@@ -177,9 +186,4 @@ li {
 /* Style for Google icons */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-}
-
-/* Icons in google */
-.com-tsk {
-  content: "task_alt";
 }
