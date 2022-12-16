@@ -11,6 +11,8 @@ class TodoLS {
 
   hasTasks = () => this.tasks.length > 0;
 
+  hasCompletedTasks = () => this.tasks.some(({ completed: c }) => c);
+
   save = () => {
     localStorage.setItem('todoData', JSON.stringify(this.tasks));
   }
