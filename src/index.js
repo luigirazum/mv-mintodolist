@@ -1,6 +1,3 @@
-// Lodash, now imported by this script
-import _ from 'lodash';
-
 // Importing Task to create valid Task objects.
 // Importing TodoLs to create a collection of Task objects.
 import Task from './task.js';
@@ -84,9 +81,7 @@ const rematchIndexes = (startIndex) => {
 window.addEventListener('DOMContentLoaded', () => {
   if (todoList.hasTasks()) {
     // If we have tasks in our todoList, we'll display them.
-    _.forEach(todoList.tasks, (task) => {
-      displayTask(task);
-    });
+    todoList.forEach((task) => displayTask(task));
   }
 });
 

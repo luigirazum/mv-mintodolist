@@ -39,7 +39,6 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "lodash": "^4.17.21",
     "material-symbols": "^0.4.2"
   }
 }

@@ -1,5 +1,4 @@
 // Lodash, now imported by this script
-import _ from 'lodash';
 import Task from './task.js';
 
 class TodoLS {
@@ -21,7 +20,7 @@ class TodoLS {
     task.index = this.tasks.length;
     this.tasks.push(task);
     this.save();
-    return _.last(this.tasks);
+    return this.tasks.at(-1);
   }
 
   delTask = ({ index: i }) => {
