@@ -81,7 +81,7 @@ const rematchIndexes = (startIndex) => {
 window.addEventListener('DOMContentLoaded', () => {
   if (todoList.hasTasks()) {
     // If we have tasks in our todoList, we'll display them.
-    todoList.forEach((task) => displayTask(task));
+    todoList.tasks.forEach((task) => displayTask(task));
   }
 });
 
