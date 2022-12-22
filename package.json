@@ -5,10 +5,8 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "start": "webpack serve --open",
-    "restart": "webpack serve",
     "build": "webpack",
-    "deploy": "gh-pages -d dist"
+    "start": "webpack serve --open"
   },
   "repository": {
     "type": "git",
@@ -42,6 +40,7 @@
     "jest-environment-jsdom": "^29.3.1"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "material-symbols": "^0.4.2"
   }
 }
