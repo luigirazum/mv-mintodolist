@@ -47,10 +47,10 @@
 ### Tech Stack <a name="tech-stack"></a>
 
   <ul>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Javascript</a></li>
-    <li><a href="https://webpack.js.org/">WebPack</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">HTML</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">CSS</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">Javascript</a></li>
+    <li><a href="https://webpack.js.org/" target="_blank" rel="noopener noreferrer">WebPack</a></li>
   </ul>
 
 
@@ -67,7 +67,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- <a href="https://luigirazum.github.io/mv-mintodolist/" target=_blank>Minimalist ToDo-List - Live Demo</a>
+- <a href="https://luigirazum.github.io/mv-mintodolist/" target="_blank" rel="noopener noreferrer">Minimalist ToDo-List - Live Demo</a>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -125,9 +125,9 @@ You can deploy this project using:
 
 👨‍💻 Luis Zubia
 
-- GitHub: [@luigirazum](https://github.com/luigirazum)
-- Twitter: [@LuigiRazum](https://twitter.com/LuigiRazum)
-- LinkedIn: [Luis Raul Zubia Maciel](https://linkedin.com/in/luiszubia)
+- GitHub: <a href="https://github.com/luigirazum" target="_blank" rel="noopener noreferrer">@luigirazum</a>
+- Twitter: <a href="https://twitter.com/LuigiRazum" target="_blank" rel="noopener noreferrer">@LuigiRazum</a>
+- LinkedIn: <a href="https://linkedin.com/in/luiszubia" target="_blank" rel="noopener noreferrer">Luis Raul Zubia Maciel</a>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
