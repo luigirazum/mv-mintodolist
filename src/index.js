@@ -1,7 +1,7 @@
 // Importing Task to create valid Task objects.
 // Importing TodoLs to create a collection of Task objects.
-import Task from './task.js';
-import TodoLs from './todols.js';
+import Task from './modules/task.js';
+import TodoLs from './modules/todols.js';
 
 // Import css styles for our project
 import './style.css';
