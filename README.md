@@ -6,28 +6,41 @@
   <br/>
 
   <h3><b>Minimalist ToDo-List App</b></h3>
-  <p>This is a simple minimalist ToDo App which you can use to track your daily pending tasks.</p>
+  <p>This is a simple minimalist ToDo App which you can use to track your daily pending tasks. Adding, Deleting or Marking a task as done in its very intuitive interface.</p>
 
 </div>
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [❓ FAQ](#faq)
-- [📝 License](#license)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 \[Minimalist ToDo List\] ](#-minimalist-todo-list-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Build](#build)
+    - [Run](#run)
+    - [Deployment](#deployment)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [❓ FAQ ](#-faq-)
+  - [📝 License ](#-license-)
 
 # 📖 [Minimalist ToDo List] <a name="about-project"></a>
 
-**[Minimalist ToDo-List]** is an App that you can use to track your daily tasks.
+**[Minimalist ToDo-List]** is an App that you can use to track your daily tasks. It allows you to Add/Mark as done/Delete a task, or you can Mark as done several tasks and Delete all of the marked tasks at once with the "Clear all completed" button.
+<div align="center">
+
+  <img src="./src/imgs/todolist-screenshoot.png" alt="logo" width="360"  height="auto" />
+  <br/>
+
+</div>
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -62,12 +75,48 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-To get a local copy up and running, follow these steps:
+To get a local copy up and running, follow these steps.
 
-- [ ] Navigate to the button on the top right green "code" button.
-- [ ] In the drop down menu choose "Download Zip".
-- [ ] After extracting the files, you'll have my project on your local machine.
+### Prerequisites
 
+In order to run this project you need `git` locally installed. Please got to [Getting Started - Installing Git guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and follow the steps described for your system to install `git`.
+
+### Setup
+
+Clone this repository to your desired folder:
+```sh
+  cd my-folder
+  git clone git@github.com:luigirazum/mv-mintodolist-JSbp.git
+```
+
+### Install
+
+Install this project with:
+```sh
+  cd mv-mintodolist-JSbp
+  npm install
+```
+
+### Build
+
+To build the project, execute the following command:
+```sh
+  npm run build  
+```
+
+### Run
+
+To run tests, run the following command:
+```sh
+  npm start
+```
+
+### Deployment
+
+You can deploy this project using:
+```sh
+  npm deploy
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
