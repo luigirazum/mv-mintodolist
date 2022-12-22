@@ -37,7 +37,7 @@
 **[Minimalist ToDo-List]** is an App that you can use to track your daily tasks. It allows you to Add/Mark as done/Delete a task, or you can Mark as done several tasks and Delete all of the marked tasks at once with the "Clear all completed" button.
 <div align="center">
 
-  <img src="./src/imgs/todolist-screenshoot.png" alt="logo" width="360"  height="auto" />
+  <img src="./src/imgs/todolist-screenshoot.png" alt="Screenshoot" width="360"  height="auto" />
   <br/>
 
 </div>
@@ -67,7 +67,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Minimalist ToDo-List - Live Demo](https://luigirazum.github.io/mv-mintodolist/)
+- <a href="https://luigirazum.github.io/mv-mintodolist/" target=_blank>Minimalist ToDo-List - Live Demo</a>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
