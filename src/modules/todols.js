@@ -16,6 +16,8 @@ class TodoLS {
     localStorage.setItem('todoData', JSON.stringify(this.tasks));
   }
 
+  clear = () => localStorage.removeItem('todoData');
+
   addTask = (task) => {
     task.index = this.tasks.length;
     this.tasks.push(task);
@@ -26,11 +28,11 @@ class TodoLS {
   delTask = ({ index: i }) => {
     const previousSize = this.tasks.length;
 
-    this.tasks = this.tasks.filter(({ index }) => index !== parseInt(i, 10));
+    this.tasks = this.tasks.filter(({ index }) => index !== Number(i));
 
     this.save();
 
-    return (previousSize !== this.tasks.length) ? parseInt(i, 10) : null;
+    return (previousSize !== this.tasks.length) ? Number(i) : null;
   }
 
   updTask = ({ parentElement: { dataset: { index: i } }, textContent: d }) => {
@@ -39,7 +41,7 @@ class TodoLS {
   }
 
   comTask = ({ target: { parentElement: { dataset: { index: i } }, dataset: c } }) => {
-    this.tasks[parseInt(i, 10)].setCompleted(c);
+    this.tasks[Number(i)].setCompleted(c);
     this.save();
   }
 }
