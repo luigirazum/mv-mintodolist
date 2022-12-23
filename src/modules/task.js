@@ -6,12 +6,8 @@ class Task {
   }
 
   setCompleted = ({ completed: c }) => {
-    if (c === 'true') {
-      this.completed = true;
-    } else {
-      this.completed = false;
-    }
-  }
+    this.completed = c;
+  };
 
   isCompleted = () => this.completed;
 }

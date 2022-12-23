@@ -16,7 +16,10 @@ class TodoLS {
     localStorage.setItem('todoData', JSON.stringify(this.tasks));
   }
 
-  clear = () => localStorage.removeItem('todoData');
+  clear = () => {
+    this.tasks = [];
+    localStorage.removeItem('todoData');
+  }
 
   addTask = (task) => {
     task.index = this.tasks.length;

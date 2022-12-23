@@ -1,13 +1,12 @@
 // Importing Task to create valid Task objects.
 // Importing TodoLs to create a collection of Task objects.
-import Task from './modules/task.js';
-import TodoLs from './modules/todols.js';
+// import Task from './modules/task.js';
+import {
+  todoList, addNewTask, removeTask, rematchIndexes, deleteAllCompleted, getAllCompleted,
+} from './modules/crud.js';
 
 // Import css styles for our project
 import './style.css';
-
-// -- (v) currentTasks - contains our collection of tasks -- //
-const todoList = new TodoLs();
 
 // -- (f) displayTask - creates the 'li' task html and inserts it into #tdlist -- //
 const displayTask = (task) => {
@@ -48,33 +47,11 @@ const displayTask = (task) => {
   tdList.insertBefore(liTask, tdList.children[tdList.children.length - 1]);
 };
 
-const addNewTask = (task) => {
-  let { description = null } = task;
-  const { textContent: tcDescription } = task;
-
-  description ??= tcDescription;
-
-  const newTask = new Task({ description });
-
-  return todoList.addTask(newTask);
-};
-
-const removeTask = (task) => task.parentNode.removeChild(task);
-
-const rematchIndexes = (startIndex) => {
-  const onScreenTasks = Array.from(document.querySelectorAll('.task'));
-
-  if (todoList.hasTasks()) {
-    for (let i = startIndex; i < todoList.tasks.length; i += 1) {
-      todoList.tasks[i].index = i;
-      onScreenTasks[i].dataset.index = i;
-    }
-
-    todoList.save();
-
-    return true;
-  }
-  return false;
+const removeAllCompleted = () => {
+  const removeTasks = Array.from(document.querySelectorAll('.task .completed'));
+  const delTasks = getAllCompleted();
+  removeTasks.forEach((dt) => removeTask(dt.parentElement));
+  return delTasks;
 };
 
 // -- (e) When the DOM is ready, our tasks are generated from the currentTasks collection -- //
@@ -123,12 +100,9 @@ uiEvents.addEventListener('click', (e) => {
         break;
       case 'b-sweep':
         if (todoList.hasCompletedTasks()) {
-          const deleteTasks = Array.from(document.querySelectorAll('.task .completed'));
-          deleteTasks.forEach((dt) => {
-            const delIndex = todoList.delTask(dt.parentElement.dataset);
-            removeTask(dt.parentElement);
-            rematchIndexes(delIndex);
-          });
+          const tasks = removeAllCompleted();
+          deleteAllCompleted(tasks);
+          rematchIndexes();
         }
         break;
       case 'b-sync':
